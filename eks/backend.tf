@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.9.3"  # This removes the strict upper limit.
+  required_version = ">= 1.9.3"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -7,8 +7,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "dev-aman-tf-bucket"
-    region         = "ap-southeast-2"
+    bucket         = "dev-aman-tf-bucket-new"  # Update with new bucket name in ap-southeast-2
+    region         = "ap-southeast-2"  # Ensure this matches the new region
     key            = "eks/terraform.tfstate"
     dynamodb_table = "Lock-Files"
     encrypt        = true
@@ -16,5 +16,5 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.aws-region
+  region  = "ap-southeast-2"  # Ensure that the provider is using the correct region as well
 }
