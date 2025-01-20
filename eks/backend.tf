@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.9.3"
+  required_version = ">= 1.9.3"  # This removes the strict upper limit.
   required_providers {
     aws = {
       source  = "hashicorp/aws"
